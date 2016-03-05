@@ -4,14 +4,19 @@ import { Link, hashHistory } from 'react-router'
 
 export default React.createClass({
   handleSubmit() {
-  	hashHistory.push('/redeem/loading');
+  	this.props.transitionTo('/redeem/loading');
   },
   render() {
     return (
-      <div>
-Enter Code
-	<button onClick={this.handleSubmit}>Submit</button>
+      <div style={divStyle}>
+		Enter Code
+		<button onClick={this.handleSubmit}>Submit</button>
       </div>
     )
   }
 })
+
+var divStyle = {
+  color: 'white',
+  backgroundColor: 'green'
+};

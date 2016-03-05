@@ -1,8 +1,10 @@
 var path = require('path');
 module.exports = {
-  entry: './index.js',
+   devtool: 'eval-source-map',
+  entry: './root.js',
 
   output: {
+  
     filename: 'bundle.js',
     path: __dirname
   },

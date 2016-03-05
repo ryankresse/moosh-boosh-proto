@@ -4,12 +4,16 @@ import EnterCode from './enter-code';
 import RedeemLoading from './redeem-loading';
 import RedeemConfirm from './redeem-confirm';
 export default React.createClass({
+  
+  transitionTo(url) {
+  	hashHistory.push(url);
+  },
+  
   render() {
     return (
-      <Router history={hashHistory}>
-      	  <Route path="/redeem/loading" component={RedeemLoading}/>
-		  <Route path="/redeem/confirm"  component={RedeemConfirm}/>
-      </Router>
+      <div>{this.props.children && React.cloneElement(this.props.children, {
+            transitionTo: this.transitionTo
+          })}</div>
     )
   }
 })

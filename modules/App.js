@@ -22,14 +22,13 @@ export default React.createClass({
   
   render() {
     return (
-      <div>
+      <div class="container-fluid">
         <h1>React Router Tutorial</h1>
         <ul role="nav">
           <li><Link to="/about">About</Link></li>
           <li><Link to="/give">Give a Moosh Boosh</Link></li>
           <li><Link to="/redeem">Redeem a Moosh Boosh</Link></li>
         </ul>
-    	 {/* add this */}
         {this.props.children}
 
       </div>

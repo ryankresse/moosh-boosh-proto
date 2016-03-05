@@ -3,15 +3,15 @@ import { Link, hashHistory } from 'react-router'
 
 
 export default React.createClass({
-  nextState() {
-  	this.props.route.transitionToRedeemConfirm();
+  handleSubmit() {
+  	this.props.transitionTo('/redeem/confirm');
   },
   render() {
     return (
       <div>
       Loading Moosh Boosh
       
-      <button onClick={this.nextState}>Go to confirm</button>
+      <button onClick={this.handleSubmit}>Go to confirm</button>
       </div>
     )
   }
