@@ -23,13 +23,12 @@ function transitionToRedeemConfirm() {
 render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
- 	 <IndexRedirect to="/give/choose-neighborhood"/>
+ 	 <IndexRoute component={ChooseNeighborhood}/>
  	 <Route component={Give}>
-			<Route path="/give/choose-neighborhood" component={ChooseNeighborhood}/>
 			<Route path="/give/:neighborhood/the-basics" component={Basics}/>
       		<Route path="/give/purchase-info" component={PurchaseInfo}/>
       		 <Route path="/give/confirm" component={GiveConfirm}/>
-      		  <Route path="/give/success" component={GiveSuccess}/>
+     <Route path="/give/success" component={GiveSuccess}/>
 
       		 
 
