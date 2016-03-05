@@ -22,12 +22,8 @@ render((
       <IndexRoute component={ChooseNeighborhood}/>
       <Route path="/give" component={Give}/>
        
-       <Route path="/redeem" component={Redeem}>
-       		<IndexRoute component={EnterCode}/>
-      		<Route path="/redeem/loading" transitionToRedeemConfirm={transitionToRedeemConfirm} component={RedeemLoading}/>
-	    	<Route path="/redeem/confirm"  component={RedeemConfirm}/>
-	    </Route>
-       
+       <Route path="/redeem" component={Redeem} />
+       		       
       <Route path="/about" component={About}/>
 	      
     </Route>
