@@ -17,6 +17,6 @@ export default React.createClass({
 })
 
 var divStyle = {
-  color: 'white',
+  color: 'red',
   backgroundColor: 'green'
 };

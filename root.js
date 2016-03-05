@@ -26,7 +26,7 @@ render((
  	 <IndexRedirect to="/give/choose-neighborhood"/>
  	 <Route component={Give}>
 			<Route path="/give/choose-neighborhood" component={ChooseNeighborhood}/>
-			<Route path="/give/the-basics" component={Basics}/>
+			<Route path="/give/:neighborhood/the-basics" component={Basics}/>
       		<Route path="/give/purchase-info" component={PurchaseInfo}/>
       		 <Route path="/give/confirm" component={GiveConfirm}/>
       		  <Route path="/give/success" component={GiveSuccess}/>

@@ -16,23 +16,37 @@ function transitionToRedeemConfirm() {
 
 export default React.createClass({
   
-  transitionToRedeemConfirm() {
-  	hashHistory.push('/redeem/confirm')
+  transitionTo(url) {
+  	hashHistory.push(url)
   },
   
   render() {
     return (
       <div class="container-fluid">
-        <h1>React Router Tutorial</h1>
-        <ul role="nav">
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/give">Give a Moosh Boosh</Link></li>
-          <li><Link to="/redeem">Redeem a Moosh Boosh</Link></li>
-        </ul>
-        {this.props.children}
+        <nav style={navStyles} role="nav">
+            <Link to="/give" className="col-xs-3 pull-left">Moosh Boosh</Link>
+            <Link to="/redeem" style={rightNavStyle}>Redeem a Moosh Boosh</Link>
+			<Link to="/give" style={rightNavStyle}>Give a Moosh Boosh</Link>
+         	<Link to="/about" style={rightNavStyle}>About</Link>
+
+        </nav>
+       {this.props.children && React.cloneElement(this.props.children, {
+            transitionTo: this.transitionTo
+          })}
 
       </div>
     )
   }
 })
 
+var navStyles = {
+	position: 'absolute',
+	top: '20px',
+	width: "100%"
+}
+
+
+var rightNavStyle = {
+	float:'right',
+	marginRight: '20px'
+}

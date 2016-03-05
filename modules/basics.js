@@ -3,7 +3,7 @@ import React from 'react'
 export default React.createClass({
   render() {
   	return (
-    <div> Basics</div>
+    <div>{this.props.params.neighborhood}</div>
   )
   }
 })

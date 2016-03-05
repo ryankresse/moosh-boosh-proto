@@ -11,8 +11,9 @@ export default React.createClass({
   
   render() {
     return (
-      <div>{this.props.children && React.cloneElement(this.props.children, {
-            transitionTo: this.transitionTo
+      <div> {this.props.children && React.cloneElement(this.props.children, {
+            transitionTo: this.props.transitionTo
+          })}
           })}</div>
     )
   }
