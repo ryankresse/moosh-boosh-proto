@@ -1,7 +1,13 @@
 import React from 'react'
 
 export default React.createClass({
-  
+  handleSubmit() {
+  	this.props.transitionTo('/give/purchase-info')
+  },
+  onChange(property, e) {
+  	this.props.onInputChange(property, e.target.value)
+  },
+
   render() {
   	
   	return (<div>
@@ -13,8 +19,8 @@ export default React.createClass({
 						<div className="row">
 							<h2 style={headerStyle}>Give a Moosh Boosh</h2>
 						</div>
-						<div className="row">
-							<div style={circleContainer} className="col-xs-offset-5 col-xs-2">
+						<div className={circleWrapper}>
+							<div style={circleContainer}>
 								<div style={circle}>1</div>
 								Get Started
 							</div>
@@ -23,22 +29,22 @@ export default React.createClass({
 							<div className="col-xs-6">
 								<h2 style={formHeader}>The Basics</h2>
 								<div className="form-group">
-									<input className="form-control" placeholder="Your Name"/>
+									<input className="form-control" value={this.props.formData.customerName} onChange={this.onChange.bind(null, 'customerName')} placeholder="Your Name"/>
 								</div>
 								<div className="form-group">
-									<input className="form-control" placeholder="Your Email Address"/>
+									<input className="form-control" value={this.props.formData.customerEmail} onChange={this.onChange.bind(null, 'customerEmail')} placeholder="Your Email Address"/>
 								</div>
 								<div className="form-group">
-									<input className="form-control" placeholder="Recipient's Name"/>
+									<input className="form-control" value={this.props.formData.recipientName} onChange={this.onChange.bind(null, 'recipientName')} placeholder="Recipient's Name"/>
 								</div>
 							</div>
 							<div className="col-xs-6">
 								<h2 style={formHeader}>Personalized Note To Guest</h2>
-								<textarea className="form-control"  rows="8">{placeHolder}</textarea>
+								<textarea className="form-control" value={this.props.formData.giftMessage} onChange={this.onChange.bind(null, 'giftMessage')}  rows="8"></textarea>
 							</div>	
 						</div>{/* row */}
 						<div className="row">
-							<button type="button" style={submitButton} className="col-xs-2 col-xs-offset-5 btn btn-default">Submit</button>
+							<button type="button" style={submitButton} onClick={this.handleSubmit} className="col-xs-2 col-xs-offset-5 btn btn-default">Submit</button>
 						</div>
 					</div> {/* col-xs-8 */}
 				</div>{/* row */}
@@ -60,6 +66,11 @@ textAlign:'center',
 background:'#fff',
 border: '1px solid #000',
 margin: '0 auto'
+}
+
+var circleWrapper = {
+	display: 'flex',
+	justifyContent: 'center'
 }
 
 var formHeader = {
