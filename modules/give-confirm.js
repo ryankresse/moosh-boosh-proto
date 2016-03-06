@@ -2,7 +2,7 @@ import React from 'react'
 
 export default React.createClass({
   handleSubmit() {
-  	this.props.transitionTo('/give/purchase-info')
+  	this.props.transitionTo('/give/success')
   },
    handlePrev() {
   	this.props.transitionTo('/give/' + this.props.params.neighborhood + '/purchase-info')

@@ -28,11 +28,10 @@ render((
 			<Route path="/give/:neighborhood/the-basics" component={Basics}/>
       		<Route path="/give/:neighborhood/purchase-info" component={PurchaseInfo}/>
       		 <Route path="/give/:neighborhood/confirm" component={GiveConfirm}/>
-     <Route path="/give/success" component={GiveSuccess}/>
-
-      		 
-
       </Route>
+      <Route path="/give/success" component={GiveSuccess}/>
+
+
       <Route path="/redeem" component={Redeem} >
 			<IndexRedirect to="/redeem/enter-code"/>
 			<Route path="/redeem/enter-code" component={EnterCode}/>
