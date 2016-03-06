@@ -18,7 +18,7 @@ export default React.createClass({
   }
 })
 var backgroundStyle = {
-  background: 'url(' + '../images/give_success.jpg' + ') no-repeat center center fixed',
+  background: 'url(' + 'images/give_success.jpg' + ') no-repeat center center fixed',
   WebkitBackgroundSize: 'cover',
   MozBackgroundSize: 'cover',
   msBackgroundSize: 'cover',

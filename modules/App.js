@@ -24,7 +24,7 @@ export default React.createClass({
   
   render() {
       return (
-      <div>
+      <div style={siteGlobal}>
       <Nav/>
       
        {this.props.children && React.cloneElement(this.props.children, {
@@ -36,5 +36,10 @@ export default React.createClass({
   }
 })
 
+
+
+var siteGlobal = {
+	fontFamily: 'Raleway, sans-serif'
+}
 
 

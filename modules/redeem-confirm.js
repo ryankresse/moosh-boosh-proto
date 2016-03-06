@@ -207,7 +207,7 @@ var middleContainer = {
 }
 
 var bottomContainer = {
-	  background: 'url(' + '../images/flatiron.jpg' + ') no-repeat center',
+	  background: 'url(' + 'images/flatiron.jpg' + ') no-repeat center',
 }
 
 

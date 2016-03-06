@@ -27,7 +27,7 @@ export default React.createClass({
 })
 
 var backgroundStyle = {
-  background: 'url(' + '../images/choose_neighborhood.jpg' + ') no-repeat center center fixed',
+  background: 'url(' + 'images/choose_neighborhood.jpg' + ') no-repeat center center fixed',
   WebkitBackgroundSize: 'cover',
   MozBackgroundSize: 'cover',
   msBackgroundSize: 'cover',
