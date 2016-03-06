@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 
 
 export default React.createClass({
+
 render() {
     return (<div>
      			<div className="container" style={backgroundStyle}>
@@ -38,7 +39,7 @@ render() {
 						</div>
 		
 						<div className="col-xs-4">
-							<image style={imageStyle} src={"images/ost.jpg"} />
+							<video width="480" controls poster="images/milk_bar.jpg" ></video>
 						</div>
 					</div>
 		
@@ -61,14 +62,58 @@ render() {
 							<div className="col-xs-4">
 								<div className="panel panel-default ">
 									<div style={panelHeader} className="panel-heading">
-										<h2 style={panelTitle}>About Milk Bar</h2>
+										<h2 style={panelTitle}>Go Get It!</h2>
 									</div>
 									<div className="panel-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo 
+										<image style={imageStyle} src={"images/map.png"} />
 									</div>
 								</div>
 							</div>
 						</div> {/*middle panel container*/}
+					
+					</div> {/* container*/}
+					
+					
+  				</div> {/* middle container*/}
+  				
+  				<div style={bottomContainer}>
+  					<div className="container">
+  						<h2 style={headerStyle}>While you're in the East Village...</h2>
+  						<p style={leadStyle} className="lead">Check out these other amazing local businesses.</p>
+						<div style={middlePanelContainer} className="row">
+							<div className="col-xs-4">
+								<div className="panel panel-default ">
+										<div style={panelHeader} className="panel-heading">
+											<h2 style={panelTitle}>Motorino</h2>
+										</div>
+										<div className="panel-body">
+												<image style={imageStyle} src={"images/milk_bar.jpg"} />
+										</div>
+								</div>
+							</div>
+						
+							<div className="col-xs-4">
+								<div className="panel panel-default ">
+										<div style={panelHeader} className="panel-heading">
+											<h2 style={panelTitle}>Cafe Ost</h2>
+										</div>
+										<div className="panel-body">
+												<image style={imageStyle} src={"images/ost.jpg"} />
+										</div>
+								</div>
+							</div>
+							<div className="col-xs-4">
+								<div className="panel panel-default ">
+										<div style={panelHeader} className="panel-heading">
+											<h2 style={panelTitle}>Davey's</h2>
+										</div>
+										<div className="panel-body">
+												<image style={imageStyle} src={"images/daveys.jpg"} />
+										</div>
+								</div>
+							</div>
+						
+						</div> {/*bottom panel container*/}
 					
 					</div> {/* container*/}
 					
@@ -123,6 +168,10 @@ var headerStyle ={
 	textAlign: 'center'
 };
 
+var leadStyle ={
+	textAlign: 'center'
+};
+
 var lowerBackground = {
 	background: "yellow",
 	paddingBottom: '80px'
@@ -156,6 +205,11 @@ var middleContainer = {
 	paddingTop: "30px",
 	paddingBottom: "30px"
 }
+
+var bottomContainer = {
+	  background: 'url(' + '../images/flatiron.jpg' + ') no-repeat center',
+}
+
 
 var middlePanelContainer = {
 	marginTop: "50px"
