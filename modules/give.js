@@ -19,7 +19,14 @@ export default React.createClass({
   			cardName: "",
   			cardNumber: "",
   			expirationMonth: "Month",
-  			expirationYear: "Year"
+  			expirationYear: "Year",
+  			addr1: "",
+  			addr2: "",
+  			state: "State",
+  			city: "",
+  			zip: "",
+  			accountUN: "",
+  			accountPW: ""
   		};
   	this.setState(formData)
   

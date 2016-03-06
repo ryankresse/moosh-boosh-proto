@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default React.createClass({
-  handleSubmit() {
-  	this.props.transitionTo('/give/purchase-info')
+  handleNext() {
+  	this.props.transitionTo('/give/' + this.props.params.neighborhood + '/purchase-info')
   },
   onChange(property, e) {
   	this.props.onInputChange(property, e.target.value)
@@ -19,12 +19,20 @@ export default React.createClass({
 						<div className="row">
 							<h2 style={headerStyle}>Give a Moosh Boosh</h2>
 						</div>
-						<div className={circleWrapper}>
+						<div className="col-xs-6 col-xs-offset-3" style={circleWrapper}>
 							<div style={circleContainer}>
 								<div style={circle}>1</div>
-								Get Started
+								<span style={activeCircle}>Get Started</span>
 							</div>
-						</div>{/* row */}
+							<div style={circleContainer}>
+								<div style={circle}>2</div>
+								<span>Billing</span>
+							</div>
+							<div style={circleContainer}>
+								<div style={circle}>3</div>
+								Confirmation
+							</div>
+						</div>{/* circleWrap */}
 						<div className="row">
 							<div className="col-xs-6">
 								<h2 style={formHeader}>The Basics</h2>
@@ -44,7 +52,7 @@ export default React.createClass({
 							</div>	
 						</div>{/* row */}
 						<div className="row">
-							<button type="button" style={submitButton} onClick={this.handleSubmit} className="col-xs-2 col-xs-offset-5 btn btn-default">Submit</button>
+							<button type="button" style={submitButton} onClick={this.handleNext} className="col-xs-2 col-xs-offset-5 btn btn-default">Next</button>
 						</div>
 					</div> {/* col-xs-8 */}
 				</div>{/* row */}
@@ -70,7 +78,7 @@ margin: '0 auto'
 
 var circleWrapper = {
 	display: 'flex',
-	justifyContent: 'center'
+	justifyContent: 'space-around'
 }
 
 var formHeader = {
@@ -80,6 +88,10 @@ var formHeader = {
 
 var circleContainer = {
 	textAlign: "center"
+}
+
+var activeCircle = {
+	fontWeight: "bold"
 }
 
 var headerStyle ={
@@ -94,6 +106,7 @@ var lowerBackground = {
 var submitButton = {
 	marginTop:'20px'
 }
+
 
 
 var placeHolder = "(Note to be shown guest when they redeem Moosh Boosh code. 150 character limit.)";

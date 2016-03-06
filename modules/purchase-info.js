@@ -4,6 +4,12 @@ export default React.createClass({
    onChange(property, e) {
   	this.props.onInputChange(property, e.target.value)
   },
+  handleNext() {
+  	this.props.transitionTo('/give/' + this.props.params.neighborhood  + '/confirm')
+  },
+  handlePrev() {
+  	this.props.transitionTo('/give/' + this.props.params.neighborhood + '/the-basics')
+  },
   render() {
   	return (<div>
      <div style={lowerBackground}>
@@ -13,10 +19,18 @@ export default React.createClass({
 						<div className="row">
 							<h2 style={headerStyle}>Give a Moosh Boosh</h2>
 						</div>
-						<div className={circleWrapper}>
+						<div className="col-xs-6 col-xs-offset-3" style={circleWrapper}>
 							<div style={circleContainer}>
 								<div style={circle}>1</div>
 								Get Started
+							</div>
+							<div style={circleContainer}>
+								<div style={circle}>2</div>
+								<span style={activeCircle}>Billing</span>
+							</div>
+							<div style={circleContainer}>
+								<div style={circle}>3</div>
+								Confirmation
 							</div>
 						</div>{/* row */}
 						<div className="row">
@@ -29,7 +43,7 @@ export default React.createClass({
 									<input className="form-control" value={this.props.formData.cardNumber} onChange={this.onChange.bind(null, 'cardNumber')} placeholder="Card Number"/>
 								</div>
 								<div className="row">
-									<div className="col-xs-6 form-group">
+									<div className="col-xs-6 form-group	">
 										<select className="form-control" value={this.props.formData.expirationMonth} onChange={this.onChange.bind(null, 'expirationMonth')}>
 											<option value="Month" disabled>Month</option>
 											 <option value="Jan">January</option>			
@@ -50,12 +64,38 @@ export default React.createClass({
 								</div>
 							</div>
 							<div className="col-xs-6">
-								<h2 style={formHeader}>Personalized Note To Guest</h2>
-								<textarea className="form-control"  rows="8"></textarea>
+								<h2 style={formHeader}>Billing Information</h2>
+								<div className="form-group">
+									<input className="form-control" value={this.props.formData.addr1} onChange={this.onChange.bind(null, 'addr1')}  placeholder="Address Line 1"/>
+								</div>
+								<div className="form-group">
+									<input className="form-control" value={this.props.formData.addr2} onChange={this.onChange.bind(null, 'addr2')} placeholder="Address Line 2"/>
+								</div>
+								<div className="form-group">
+									<input className="form-control" value={this.props.formData.city} onChange={this.onChange.bind(null, 'city')} placeholder="City"/>
+								</div>
+								<div className="row">
+									<div className="col-xs-6 form-group	">
+											<select className="form-control" value={this.props.formData.state} onChange={this.onChange.bind(null, 'state')}>
+												<option value="State" disabled>State</option>
+												 <option value="NY">NY</option>			
+												  <option value="NV">NV</option>
+											</select>
+									</div>
+									<div className="col-xs-6 form-group">
+											<input className="form-control" value={this.props.formData.zip} onChange={this.onChange.bind(null, 'zip')} placeholder="Zip Code"/>
+									</div>
+								</div>
+				
 							</div>	
 						</div>{/* row */}
 						<div className="row">
-							<button type="button" style={submitButton} onClick={this.handleSubmit} className="col-xs-2 col-xs-offset-5 btn btn-default">Submit</button>
+							<div style={prevButton} className="col-xs-2 col-xs-offset-4">
+								<button type="button" style={submitButton} onClick={this.handlePrev}  className=" col-xs-12 btn btn-default">Previous</button>
+							</div>
+							<div className="col-xs-2">
+								<button type="button" style={submitButton} onClick={this.handleNext} className=" col-xs-12 btn btn-default">Next</button>
+							</div>
 						</div>
 					</div> {/* col-xs-8 */}
 				</div>{/* row */}
@@ -81,7 +121,7 @@ margin: '0 auto'
 
 var circleWrapper = {
 	display: 'flex',
-	justifyContent: 'center'
+	justifyContent: 'space-around'
 }
 
 var formHeader = {
@@ -91,6 +131,10 @@ var formHeader = {
 
 var circleContainer = {
 	textAlign: "center"
+}
+
+var activeCircle = {
+	fontWeight: "bold"
 }
 
 var headerStyle ={
@@ -105,4 +149,7 @@ var lowerBackground = {
 var submitButton = {
 	marginTop:'20px'
 }
-
+var prevButton = {
+	marginRight: "15px",
+	marginTop: "0px"
+}
