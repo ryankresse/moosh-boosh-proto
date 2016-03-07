@@ -7,40 +7,41 @@ export default React.createClass({
 render() {
     return (<div>
      			<div className="container" style={backgroundStyle}>
-	
-					<header className="row">
-						<h1 style={pageHead} className="col-xs-12">You've been given a free "Crack" Cookie at Milk Bar.</h1>
-					</header>
-					<div className="row">
-						<div className="col-xs-6">
-							<div className="panel panel-default">
-								<div style={panelHeader} className="panel-heading">
-									<h2 style={panelTitle}>How to Redeem your Moosh Boosh</h2>
-								</div>
-								<div className="panel-body">
-									<ol style={olStyle}>
-										<li>
-											We'll send a coupon to your email address. 
-										</li>
-										<li>
-											Show the coupon at the local business to redeem your Moosh Boosh
-										</li>
-									</ol>
-									<div className="row">
-										<div className="col-xs-9">
-											<input className="form-control" placeholder="Enter your email address"/>
-										</div>
-										<div className="col-xs-3">
-											<button type="button"className="btn btn-default">Submit</button>
-										</div>
+					<div style={topContainer}>
+						<header className="row">
+							<h1 style={pageHead} className="col-xs-12">You've been given a free "Crack" Cookie at Milk Bar.</h1>
+						</header>
+						<div className="row">
+							<div className="col-xs-6 col-xs-offset-1">
+								<div className="panel panel-default">
+									<div style={panelHeader} className="panel-heading">
+										<h2 style={panelTitle}>How to Redeem your Moosh Boosh</h2>
 									</div>
-								</div>
+									<div className="panel-body">
+										<ol style={olStyle}>
+											<li>
+												We'll send a coupon to your email address. 
+											</li>
+											<li>
+												Show the coupon at the local business to redeem your Moosh Boosh
+											</li>
+										</ol>
+										<div className="row">
+											<div className="col-xs-9">
+												<input className="form-control" placeholder="Enter your email address"/>
+											</div>
+											<div className="col-xs-3">
+												<button type="button"className="btn btn-default">Submit</button>
+											</div>
+										</div>
 							</div>
 						</div>
+					</div>
 		
 						<div className="col-xs-4">
-							<video width="480" controls poster="images/milk_bar.jpg" ></video>
+							<video width="300" controls poster="images/milk_bar.jpg" ></video>
 						</div>
+					</div>
 					</div>
 		
   				</div>{/*container*/}
@@ -78,7 +79,7 @@ render() {
   				
   				<div style={bottomContainer}>
   					<div className="container">
-  						<h2 style={headerStyle}>While you're in the East Village...</h2>
+  						<h2 style={bottomHeader}>While you're in the East Village...</h2>
   						<p style={leadStyle} className="lead">Check out these other amazing local businesses.</p>
 						<div style={middlePanelContainer} className="row">
 							<div className="col-xs-4">
@@ -128,7 +129,7 @@ render() {
 
 
 var backgroundStyle = {
-  marginTop: '100px'
+  marginTop: '20px'
 };
 
 var imageStyle = {
@@ -169,7 +170,8 @@ var headerStyle ={
 };
 
 var leadStyle ={
-	textAlign: 'center'
+	textAlign: 'center',
+	color: '#fff'
 };
 
 var lowerBackground = {
@@ -187,7 +189,8 @@ var panelHeader  = {
 }
 
 var pageHead  = {
-	textAlign: "center"
+	textAlign: "center",
+	marginBottom: '20px'
 }
 
 var olStyle = {
@@ -201,13 +204,14 @@ var panelTitle  = {
 }
 
 var middleContainer = {
-	background: 'yellow',
+	background: '#FFC2A4',
 	paddingTop: "30px",
 	paddingBottom: "30px"
 }
 
 var bottomContainer = {
 	  background: 'url(' + 'images/flatiron.jpg' + ') no-repeat center',
+	  paddingTop: '30px'
 }
 
 
@@ -217,4 +221,14 @@ var middlePanelContainer = {
 
 var middlePanel = {
 	width: "200px"
+}
+
+var bottomHeader = {
+	textAlign: 'center',
+	color: '#fff'
+}
+
+var topContainer  = { 
+	paddingTop: '30px',
+	paddingBottom: '30px'
 }

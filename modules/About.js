@@ -8,11 +8,11 @@ export default React.createClass({
 	},
   	render() {
     return(<div>
-    			<section className="container" style={headerStyle}>
+    			<section className="container" style={topContainer}>
 					<div className="col-xs-8 col-xs-offset-2">
-						<h1>Moosh Boosh</h1>
-						<h2>A small, delightful treat made by an amazing local business.</h2>
-						<h2>Given by Airbnb hosts to welcome their guests to the neighborhood.</h2>  
+						<h1 style={pageTitle}>Moosh Boosh</h1>
+						<h2 style={blueSubHead}>A small, delightful treat made by an amazing local business.</h2>
+						<h2 style={subHead}>Given by Airbnb hosts to welcome their guests to the neighborhood.</h2>  
 					</div>
   				</section>{/*container*/}
     			
@@ -77,6 +77,10 @@ export default React.createClass({
 								<textarea className="form-control" rows="8" placeholder="150 character limit"></textarea>
 							</div>
 						</div>
+						<div className= "col-xs-2 col-xs-offset-5">
+							<button type="button" className=" col-xs-12 btn btn-default">Submit</button>
+
+						</div>
 						
 					</div>{/*container*/}
   				</section>
@@ -94,14 +98,20 @@ var middleContainerContent = {
 	  marginTop: '80px'
 }
 
-var headerStyle = {
-	textAlign: 'center'
+var topContainer = {
+	textAlign: 'center',
+	paddingTop: '30px',
+	paddingBottom: '30px'
 }
 
 
 var panelHeader  = {
 	background: "#000",
 	color: "#fff"
+}
+
+var headerStyle  = {
+	textAlign: 'center'
 }
 
 var pageHead  = {
@@ -115,7 +125,9 @@ var panelTitle  = {
 }
 
 var bottomContainer = {
-	  background: 'yellow',
+	  background: "#FFC2A4",
+	  paddingTop: '30px',
+	  paddingBottom: '30px'
 }
 
 var bottomPanelsContainer = {
@@ -126,3 +138,20 @@ var formHeader = {
 	textAlign: "center",
 	fontSize: "16px"
 }
+
+var pageTitle = {
+	textAlign: "center",
+	fontSize: "50px"
+}
+
+var subHead = {
+	textAlign: "center",
+	fontSize: '26px'
+}
+
+var blueSubHead = {
+	color: "#3D9BE9",
+	textAlign: "center",
+	fontSize: '26px'
+}
+

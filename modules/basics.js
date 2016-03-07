@@ -91,16 +91,19 @@ var circleContainer = {
 }
 
 var activeCircle = {
-	fontWeight: "bold"
+	fontWeight: "bold",
+	fontSize: "18px"
 }
+
 
 var headerStyle ={
 	textAlign: 'center'
 };
 
 var lowerBackground = {
-	background: "yellow",
-	paddingBottom: '80px'
+	background: "#FFC2A4",
+	paddingBottom: '80px',
+	paddingTop: '30px'
 }
 
 var submitButton = {

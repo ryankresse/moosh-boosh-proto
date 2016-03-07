@@ -9,12 +9,12 @@ export default React.createClass({
 			<nav className="row"  role="nav">
 					<div className="col-xs-3" style={logoContainer}>
 						<div style={logoWrap}>
-							<Link className="no-decoration" style={logo}  to="/give" >Moosh Boosh</Link>
+							<Link className="no-decoration" style={logo}  to="/" >Moosh Boosh</Link>
 							<div style={tagLine}>Go far. Stay local.	</div>
 						</div>
 					</div>
 						<Link className="col-xs-2" to="/redeem" style={rightNavStyle}>Redeem a Moosh Boosh</Link>
-					<Link className="col-xs-2" to="/give" style={rightNavStyle} >Give a Moosh Boosh</Link>
+					<Link className="col-xs-2" to="/" style={rightNavStyle} >Give a Moosh Boosh</Link>
 					<Link className="col-xs-1" to="/about" style={rightNavStyle}>About</Link>
 				</nav>
 			</div>

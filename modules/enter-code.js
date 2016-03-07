@@ -17,8 +17,8 @@ export default React.createClass({
     <div style={backgroundStyle}>
     	<div style={containerStyle}>
     		<h1 style={headerStyle}>Welcome to New York!</h1>
-			<input className="form-control" style={inputStyle} value={this.state.code} onChange={this.onChange} placeholder="Enter your Moosh Boosh Redemption Code"/>
-    		<button type="button" style={buttonStyle} onClick={this.handleSubmit} className="btn btn-default">Submit</button>
+			<input className="form-control input-lg" style={inputStyle} value={this.state.code} onChange={this.onChange} placeholder="Enter Your Moosh Boosh Redemption Code"/>
+    		<button type="button" style={buttonStyle} onClick={this.handleSubmit} className="btn btn-lg btn-default">Submit</button>
 
     	</div>
     </div>
@@ -46,14 +46,17 @@ var containerStyle = {
 }	
 
 var buttonStyle = {
-	width: "310px",
+	width: "400px",
 	marginTop: "10px"
 }
 
 var headerStyle = {
-	color: '#fff'
+	color: '#fff',
+	fontSize: '50px',
+	marginBottom: '30px'
 }	
 
 var inputStyle = {
-	width: '310px'
+	width: '400px',
+	textAlign: 'center'
 }	

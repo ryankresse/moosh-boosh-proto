@@ -37,40 +37,43 @@ export default React.createClass({
   	this.setState(newState);
   },
   render() {
-  	return (
-  	<div>
-  	<div className="container" style={backgroundStyle}>
-	
-			<header className="row">
-				<h1 className="col-xs-12">Give your guest a Moosh Boosh from one of the amazing local businesses
-				in the {this.props.params.neighborhood}</h1>
-			</header>
-			<div className="row">
-				<div className="col-xs-4">
-					<image style={imageStyle} src={"images/daveys.jpg"} />
+  	return (<div>
+		<div className="container" style={backgroundStyle}>
+				<header className="row">
+					<h1 style={giveHeader} className="col-xs-12">Give your guest a Moosh Boosh from one of the amazing local businesses
+					in the {this.props.params.neighborhood}</h1>
+				</header>
+				<div className="row">
+					<div className="col-xs-4">
+						<image style={imageStyle} src={"images/daveys.jpg"} />
+					</div>
+		
+					<div className="col-xs-4">
+						<image style={imageStyle} src={"images/ost.jpg"} />
+					</div>
+		
+					<div className="col-xs-4">
+						<image style={imageStyle} src={"images/milk_bar.jpg"} />
+					</div>
 				</div>
 		
-				<div className="col-xs-4">
-					<image style={imageStyle} src={"images/ost.jpg"} />
-				</div>
-		
-				<div className="col-xs-4">
-					<image style={imageStyle} src={"images/milk_bar.jpg"} />
-				</div>
-			</div>
-		
-  	</div>{/*container*/}
-  	
-       {this.props.children && React.cloneElement(this.props.children, {
-            transitionTo: this.props.transitionTo, onInputChange: this.onInputChange, formData: this.state
-          })}
+		</div>{/*container*/}
+		{this.props.children && React.cloneElement(this.props.children, {
+            transitionTo: this.props.transitionTo, onInputChange: this.onInputChange, formData: this.state})}
 
   </div>)
-  }
+  }	
 })
 
 var backgroundStyle = {
-  marginTop: '100px'
+  paddingTop: '30px',
+  paddingBottom: '30px'
+};
+
+
+var giveHeader = {
+  textAlign: 'center',
+  marginBottom: '30px'
 };
 
 var imageStyle = {
@@ -109,11 +112,6 @@ var circleContainer = {
 var headerStyle ={
 	textAlign: 'center'
 };
-
-var lowerBackground = {
-	background: "yellow",
-	paddingBottom: '80px'
-}
 
 var submitButton = {
 	marginTop:'20px'

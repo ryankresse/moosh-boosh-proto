@@ -16,13 +16,11 @@ export default React.createClass({
     return (
     <div style={backgroundStyle}>
     	<div style={containerStyle} >
-			<select ref="selectControl" value={this.state.neighborhood} onChange={this.onChange} style={selectStyle} className="form-control">
+			<select  ref="selectControl" value={this.state.neighborhood} onChange={this.onChange} style={selectStyle} className=" input-lg form-control">
 			 <option value="default" disabled>Choose your neighborhood</option>
-			  <option value="1">1</option>
-			  <option>2</option>
-			  <option>3</option>
-			  <option>4</option>
-			  <option>5</option>
+			  <option value="East Village">East Village</option>
+			  <option value="West Village">West Village</option>
+			  <option value="Chelsea">Chelsea</option>
 			</select>
     	</div>
     
@@ -49,4 +47,5 @@ var containerStyle = {
 
 var selectStyle = {
 	width: '300px',
+	textAlign: 'center'
 }	

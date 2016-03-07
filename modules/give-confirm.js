@@ -102,7 +102,8 @@ var circleContainer = {
 }
 
 var activeCircle = {
-	fontWeight: "bold"
+	fontWeight: "bold",
+	fontSize: "18px"
 }
 
 var headerStyle ={
@@ -110,7 +111,7 @@ var headerStyle ={
 };
 
 var lowerBackground = {
-	background: "yellow",
+	background: "#FFC2A4",
 	paddingBottom: '80px'
 }
 

@@ -28,9 +28,7 @@ export default React.createClass({
       <Nav/>
       
        {this.props.children && React.cloneElement(this.props.children, {
-            transitionTo: this.transitionTo
-          })}
-
+            transitionTo: this.transitionTo})}
       </div>
     )
   }
