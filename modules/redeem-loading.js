@@ -20,6 +20,7 @@ export default React.createClass({
 				<p className="lead">They've given you a delightful treat from one of the best spots in your entire neighborhood! </p>
       		</div>
 			<div>
+			<p>Loading your..</p>
 				<div style={progressWrapper}>
 					<div style={loadingContent, loadingPink}>
 						<span style={gift} className="glyphicon glyphicon-gift"></span>

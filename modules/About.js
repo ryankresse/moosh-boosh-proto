@@ -1,11 +1,20 @@
 // modules/About.js
 import React from 'react'
 
+var popOverShown = false;
+
 export default React.createClass({
 
 	goToGive() {
 		this.props.transitionTo('/');
 	},
+	showPopOver() {
+		document.getElementById('popOver').style.display = "block";	
+	},
+	hidePopOver() {
+		document.getElementById('popOver').style.display = "none";	
+	},
+	
   	render() {
     return(<div>
     			<section className="container" style={topContainer}>
@@ -28,8 +37,9 @@ export default React.createClass({
 								<div className="col-xs-5">
 									<button type="button" onClick={this.goToGive} className=" btn btn-primary">Give a Moosh Boosh</button>
 								</div>
-								<div className="col-xs-5">
-									<button type="button" className=" btn btn-primary">What's a Moosh Boosh? <span className="glyphicon glyphicon-question-sign"></span></button>
+								<div style={whatsAContainer} className="col-xs-5">
+									<div id="popOver" style={popOver}>{popOverText}</div>
+									<button type="button" onMouseLeave={this.hidePopOver} onMouseEnter={this.showPopOver} className=" btn btn-primary">What's a Moosh Boosh? <span className="glyphicon glyphicon-question-sign"></span></button>
 								</div>
 							</div>
 						</div>
@@ -90,7 +100,7 @@ export default React.createClass({
 })
 
 var middleContainer = {
-	  background: 'url(' + '/images/desk.jpg' + ') no-repeat center',
+	  background: 'url(' + 'images/desk.jpg' + ') no-repeat center',
 	  paddingBottom: "200px",
 }
 
@@ -155,3 +165,27 @@ var blueSubHead = {
 	fontSize: '26px'
 }
 
+var popOver = {
+	display: 'none',
+	position:'absolute',
+	top: '-60px',
+	left: '230px',
+	width: '200px',
+    zIndex: '1060',
+    padding: '5px',
+    backgroundColor: '#fff',
+    WebkitBackgroundClip: 'padding-box',
+    backgroundClip: 'paddingBox',
+    border: '1px solid #ccc',
+    border: '1px solid rgba(0,0,0,.2)',
+    borderRadius: '6px',
+    WebkitBoxShadow: '0 5px 10px rgba(0,0,0,.2)',
+    boxShadow: '0 5px 10px rgba(0,0,0,.2)',
+    lineBreak: 'auto'
+}
+
+var whatsAContainer = {
+	position: 'relative'
+}
+
+ var popOverText = "A Moosh Boosh is a small, delightful gift that can be redeemed at a cool local business.  It could two free cappucinos from the best cafe in your neighborhood.  Or a delicious cookie from a local bakery.  The best part about a Moosh Boosh is that it's a surprise.  Neither the giver, nor the receiver, chooses the gift.  The only guarantee is that it will be from a great local business in your neighborhood.";
